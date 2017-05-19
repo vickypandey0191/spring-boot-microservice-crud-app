@@ -1,0 +1,16 @@
+
+
+applications:
+  - name: spring-boot-microservice-crud-app
+    buildpack: https://github.com/cloudfoundry/java-buildpack.git#v3.7
+    path: target/spring-boot-microservice-crud-app-0.0.1-SNAPSHOT.jar
+    timeout : 180
+    memory: 512M
+    disk_quota: 512M
+    services:
+      - my-db
+env:
+    SPRING_PROFILES_ACTIVE: cloud, default
+    MEMORY_LIMIT: 358M
+   
+
